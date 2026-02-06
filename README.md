@@ -28,7 +28,12 @@ src/
 │   └── index.js    # Ponto de entrada da Store
 ├── styles/         # Estilos globais e configurações de temas
 └── App.js          # Componente raiz da aplicação
-Instalação e ExecuçãoSiga os passos abaixo para rodar o projeto localmente:Instalar dependências:Bashnpm install
+Instalação e Execução
+Siga os passos abaixo para rodar o projeto localmente:
+Instalar dependências:Bashnpm install
 Iniciar servidor de desenvolvimento:Bashnpm start
-Scripts DisponíveisComandoDescriçãonpm startInicia o projeto em localhost:3000npm run lintExecuta a verificação de erros do ESLint
+Scripts Disponíveis
+Comando         Descrição
+npm start       Inicia o projeto em localhost:3000
+npm run lint    Executa a verificação de erros do ESLint
 ```
