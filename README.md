@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+Este modelo de README foi estruturado para ser profissional e direto, focado na documentação técnica do seu boilerplate (projeto base). Ele reflete exatamente as tecnologias que configuramos: React Router v6, Redux Legacy e a nova estrutura do ESLint.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modelo Base React - Estrutura Profissional
+Este repositório serve como um gabarito estrutural para aplicações React.js. Ele foi desenvolvido para acelerar o início de novos projetos, garantindo que as configurações de rotas, estado global e padronização de código estejam prontas para uso.
 
-## Available Scripts
+Tecnologias Utilizadas
+React JS (Componentes de Função e Classes)
 
-In the project directory, you can run:
+React Router v6 (Roteamento dinâmico)
 
-### `npm start`
+Redux (Gerenciamento de estado legado/vanilla)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Redux Saga (Lógica assíncrona e side-effects)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+History (Navegação externa aos componentes)
 
-### `npm test`
+Styled Components (Estilização baseada em componentes)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ESLint 9+ & Prettier (Qualidade e padronização de código)
 
-### `npm run build`
+Prop-Types (Validação de propriedades)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Estrutura de Pastas
+A organização segue o padrão modular para permitir escalabilidade:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Plaintext
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/
+├── assets/ # Arquivos estáticos (imagens, svgs)
+├── components/ # Componentes compartilhados
+├── pages/ # Componentes de página (containers)
+├── routes/ # Configuração de rotas e MyRoute (Proteção)
+├── services/ # Configuração de API (Axios) e History
+├── store/ # Configuração completa do Redux
+│ ├── modules/ # Reducers, Sagas, Actions e Types por domínio
+│ └── index.js # Ponto de entrada da Store
+├── styles/ # Estilos globais e temas
+└── App.js # Componente raiz da aplicação
+Configurações Principais
+Roteamento Protegido
+O arquivo src/routes/MyRoute.js contém a lógica para proteção de rotas. Ele utiliza o componente Maps do React Router v6 para redirecionar usuários não autenticados.
 
-### `npm run eject`
+Uso: Envolver o elemento desejado na prop element do componente Route.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Integração com History
+Para permitir que o Redux Saga ou arquivos de serviço realizem navegação, o projeto utiliza o unstable_HistoryRouter. Isso permite o uso do objeto history customizado em qualquer parte da aplicação.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Redux Legacy
+A Store está configurada utilizando legacy_createStore. Esta abordagem foi mantida para garantir compatibilidade com arquiteturas de ensino e sistemas que exigem controle total sobre o fluxo de dados sem a abstração do Redux Toolkit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Instalação e Execução
+Clone o repositório:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Bash
 
-## Learn More
+git clone https://github.com/seu-usuario/seu-repositorio.git
+Instale as dependências:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Bash
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
+Inicie o servidor de desenvolvimento:
 
-### Code Splitting
+Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm start
+Scripts Disponíveis
+npm start: Inicia a aplicação em modo de desenvolvimento.
 
-### Analyzing the Bundle Size
+npm run build: Cria a versão de produção na pasta build.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm run lint: Executa a verificação de erros pelo ESLint.
